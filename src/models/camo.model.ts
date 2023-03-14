@@ -18,11 +18,11 @@ export class camo{
     public get isUnlocked() : boolean {
         return this._isUnlocked;
     }
-    public set isUnlocked(v : boolean) {
-        if (!this.isAchievable) {
+    public set isUnlocked(isUnlocked : boolean) {
+        if (this.isAchievable==false) {
             return;
         }
-        this._isUnlocked = v;
+        this._isUnlocked = isUnlocked;
     }
     
 }
