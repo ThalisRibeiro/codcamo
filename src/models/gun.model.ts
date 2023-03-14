@@ -46,4 +46,19 @@ export class Gun {
         this._normalCamos = [new camo("",true), new camo("",true),new camo("",true),new camo("",true)];
         
     }
+    isGoldAchievable(){
+        if(this.hasOnlyOneNormal()){
+            if(this._normalCamos[0].isUnlocked==true)
+                this._goldCamo.isAchievable = true;
+            else
+                this._goldCamo.isAchievable = false;
+        }
+        else{
+            if (this._normalCamos.every(x=> x.isUnlocked==true))
+                this._goldCamo.isAchievable = true;
+            else
+                this._goldCamo.isAchievable = false;
+        }
+
+    }
 }
