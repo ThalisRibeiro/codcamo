@@ -31,4 +31,19 @@ export class Gun {
     public _polyCamo: camo = new camo("", false);
     public _orionCamo: camo = new camo("", false);
 
+    hasOnlyOneNormal():boolean{
+        //Categories ID 8 melees and 9 launchers have only 1 normal challenge
+        if (this.categoryId>7) {
+            return true;
+        }
+        return false;
+    }
+    setCamos(){
+        if(this.hasOnlyOneNormal()){
+            this._normalCamos = [new camo("",true)];
+            return;
+        }
+        this._normalCamos = [new camo("",true), new camo("",true),new camo("",true),new camo("",true)];
+        
+    }
 }
