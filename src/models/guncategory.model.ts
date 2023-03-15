@@ -2,9 +2,10 @@ export class gunCategory{
     /**
      *
      */
-    constructor(name:string, value: number) {
+    constructor(name:string, Id: number, launchGuns: number = 0) {
         this._name = name;
-        this._value = value;
+        this._categoryId = Id;
+        this._launchGun = launchGuns;
     }
     
     private _name : string;
@@ -16,13 +17,21 @@ export class gunCategory{
     }
 
     
-    private _value : number;
-    public get value() : number {
-        return this._value;
+    private _categoryId : number;
+    public get categoryId() : number {
+        return this._categoryId;
     }
-    private set value(v : number) {
-        this._value = v;
+    private set categoryId(v : number) {
+        this._categoryId = v;
     }
     
+    
+    private _launchGun : number;
+    public get launchGun() : number {
+        return this._launchGun;
+    }
+    private set launchGun(v : number) {
+        this._launchGun = v;
+    }
     
 }
