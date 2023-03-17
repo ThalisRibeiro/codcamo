@@ -9,7 +9,7 @@ export class camo{
     public get challenge():string{
         return this._challenge;
     }
-    private set challenge(challenge:string){
+    public set challenge(challenge:string){
         this._challenge=challenge;
     }
     public isAchievable:boolean;
