@@ -1,10 +1,12 @@
 export class camo{
 
-    constructor(challenge: string = "", isNormalChal:boolean){
+    constructor(challenge: string = "", isNormalChal:boolean, isHidden:boolean=false){
         this._challenge = challenge;
         this.isAchievable = isNormalChal;
         this._isUnlocked = false;
+        this.isHidden = isHidden;
     }
+    isHidden:boolean;
     private _challenge:string;
     public get challenge():string{
         return this._challenge;

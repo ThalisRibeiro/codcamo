@@ -47,7 +47,7 @@ export class Gun {
     }
     public setCamos(Chal1:string ="", Chal2:string = "",Chal3:string= "",Chal4:string=""){
         if(this.hasOnlyOneNormal()){
-            this._normalCamos = [new camo(Chal1,true)];
+            this._normalCamos = [new camo(Chal1,true),new camo(Chal2,true,true),new camo(Chal3,true,true),new camo(Chal4,true,true)];
             return;
         }
         this._normalCamos = [new camo(Chal1,true), new camo(Chal2,true),new camo(Chal3,true),new camo(Chal4,true)];
