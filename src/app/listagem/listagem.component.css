@@ -1,0 +1,20 @@
+body{
+    height: 100%;
+}
+
+div{
+    --divs-bg: #4747473b;
+    --azul:#0017e4;
+}
+.Categories-List{
+    /* background-color: var(--divs-bg); */
+    background-color: var(--divs-bg);
+    border-color: black;
+    border-style: solid;
+    font-size: x-large;
+    margin: 15px;
+    padding: 15px;    
+}
+:hover{
+    border-width: 5px;
+}
