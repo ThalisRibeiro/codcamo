@@ -1,10 +1,25 @@
 <p>listagem works!</p>
-<div class="Categories-List" *ngFor="let category of guncategories"> 
+<div class="categories-List" *ngFor="let category of guncategories; let i = index" (click)="hiddenClick(i)"> 
     <h3>{{ category.name }}</h3>
-    <div class="Gun-List" *ngFor="let gun of gunsList">
+    <div class="Gun-List" *ngFor="let gun of gunsList" [ngClass]="{
+        'gun-list-show':!category.isHidden,
+        'gun-list-not-show':category.isHidden
+    }" >
+    <div class="normal-camo">
         <label>{{gun.name}} </label>
+
+    </div>
+    <div class="final-camos">
         <label>{{gun._goldCamo.challenge}} </label>
-        <button>{{gun._goldCamo.isUnlocked}} </button>
+        <i></i>
+        <label>{{gun._platinumCamo.challenge}} </label>
+        <i></i>
+        <label>{{gun._polyCamo.challenge}} </label>
+        <i></i>
+        <label>{{gun._orionCamo.challenge}} </label>
+        <i></i>
+    </div>
+        
 
     </div>
 </div>

@@ -16,5 +16,8 @@ export class ListagemComponent implements OnInit{
       this.guncategories = mockData.getDefaultGunCategory();
       this.gunsList = mockData.getDefaultGunList();
   }
-
+  hiddenClick(i:number){
+    this.guncategories[i].isHidden = !this.guncategories[i].isHidden;
+    console.log(this.guncategories[i].name+' foi clicado, isHidden= '+this.guncategories[i].isHidden )
+  }
 }

@@ -16,7 +16,7 @@ export class gunCategory{
         this._name = v;
     }
 
-    
+    public isHidden = true;    
     private _categoryId : number;
     public get categoryId() : number {
         return this._categoryId;
