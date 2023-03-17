@@ -1,2 +1,10 @@
 <p>listagem works!</p>
-<div class="Categories-List" *ngFor="let category of guncategories">{{ category.name }} </div>
+<div class="Categories-List" *ngFor="let category of guncategories"> 
+    <h3>{{ category.name }}</h3>
+    <div class="Gun-List" *ngFor="let gun of gunsList">
+        <label>{{gun.name}} </label>
+        <label>{{gun._goldCamo.challenge}} </label>
+        <button>{{gun._goldCamo.isUnlocked}} </button>
+
+    </div>
+</div>
