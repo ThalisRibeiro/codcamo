@@ -19,14 +19,17 @@ export class DefaultDataService {
 
 public getDefaultGunList():Gun[]{
   let guns:Gun[] =[];
-  let gun = new Gun("m4",0, '25 headshots', '25 longshots');
-  gun.setCamos('kill','kill','kill','kill',)
+  let gun = new Gun("m4",0, '10 3 kills', '25 longshots','25 headshots', 'unlock 51 poly');
+  gun.setCamos('50 kill','kill','kill','kill',)
   guns.push(gun);
-  gun = new Gun("m16",0, '25 headshots', '25 longshots');
-  gun.setCamos('kill','kill','kill','kill',)
+  gun = new Gun("m16",0, '10 3 kills', '25 longshots','25 headshots', 'unlock 51 poly');
+  gun.setCamos('50 kill','kill','kill','kill',)
   guns.push(gun);
-  gun = new Gun("m13",0, '25 headshots', '25 longshots');
-  gun.setCamos('kill','kill','kill','kill',)
+  gun = new Gun("m13",0, '10 3 kills', '25 longshots','25 headshots', 'unlock 51 poly');
+  gun.setCamos('50 kill','kill','kill','kill',)
+  guns.push(gun);
+  gun = new Gun("Shield",0, '10 3 kills', '10 Double','10 behind', 'unlock 51 poly');
+  gun.setCamos('50 kill')
   guns.push(gun);
   
   return guns;
