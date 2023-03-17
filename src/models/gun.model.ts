@@ -1,13 +1,17 @@
 import { camo } from "./camo.model";
 
 export class Gun {
-    constructor(name: string, category:number) {
+    
+    public constructor(name: string, category:number, GoldChal: string = "",PlatChal: string = "",PolyChal: string = "",OrionChal: string = "") {
         this._name = name;
         this._categoryId = category;
-        // this.setCamos();
-        
+        this._goldCamo = new camo(GoldChal, false);
+        this._platinumCamo= new camo(PlatChal, false);
+        this._polyCamo= new camo(PolyChal, false);
+        this._orionCamo = new camo(OrionChal, false);
+
+        this.setCamos();      
     }
-    
     private _name : string;
     public get name() : string {
         return this._name;
@@ -24,12 +28,15 @@ export class Gun {
         this._categoryId = v;
     }
     
-    public _normalCamos: camo[] = [];
+    private _normalCamos: camo[] = [];
 
-    public _goldCamo: camo = new camo("", false);
-    public _platinumCamo: camo = new camo("", false);
-    public _polyCamo: camo = new camo("", false);
-    public _orionCamo: camo = new camo("", false);
+    public get normalCamos():camo[]{
+        return this._normalCamos
+    }
+    public _goldCamo: camo;
+    public _platinumCamo: camo;
+    public _polyCamo: camo ;
+    public _orionCamo: camo ;
 
     hasOnlyOneNormal():boolean{
         //Categories ID 8 melees and 9 launchers have only 1 normal challenge
@@ -38,12 +45,12 @@ export class Gun {
         }
         return false;
     }
-    setCamos(){
+    public setCamos(Chal1:string ="", Chal2:string = "",Chal3:string= "",Chal4:string=""){
         if(this.hasOnlyOneNormal()){
-            this._normalCamos = [new camo("",true)];
+            this._normalCamos = [new camo(Chal1,true)];
             return;
         }
-        this._normalCamos = [new camo("",true), new camo("",true),new camo("",true),new camo("",true)];
+        this._normalCamos = [new camo(Chal1,true), new camo(Chal2,true),new camo(Chal3,true),new camo(Chal4,true)];
         
     }
     isGoldAchievable(){
