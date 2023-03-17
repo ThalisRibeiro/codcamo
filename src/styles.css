@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --primary-bg: #1380b688;
+    --secondary-bg: #0eb91c80;
+
+    --primary-btn-bg: #88888823;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(45deg,var(--primary-bg),var(--secondary-bg));
+}
