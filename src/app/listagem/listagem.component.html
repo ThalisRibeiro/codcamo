@@ -7,7 +7,14 @@
     }" >
     <div class="normal-camo">
         <label>{{gun.name}} </label>
-
+        <label> {{gun.normalCamos[0].challenge}} </label>
+        <i></i>
+        <label [hidden]="gun.normalCamos[1].isHidden"> {{gun.normalCamos[1].challenge}} </label>
+        <i></i>
+        <label [hidden]="gun.normalCamos[2].isHidden"> {{gun.normalCamos[2].challenge}} </label>
+        <i></i>
+        <label [hidden]="gun.normalCamos[3].isHidden"> {{gun.normalCamos[3].challenge}} </label>
+        <i></i>
     </div>
     <div class="final-camos">
         <label>{{gun._goldCamo.challenge}} </label>

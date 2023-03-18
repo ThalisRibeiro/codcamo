@@ -6,7 +6,7 @@ export class camo{
         this._isUnlocked = false;
         this.isHidden = isHidden;
     }
-    isHidden:boolean;
+    public isHidden:boolean;
     private _challenge:string;
     public get challenge():string{
         return this._challenge;
