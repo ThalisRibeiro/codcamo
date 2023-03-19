@@ -49,9 +49,9 @@
 
             <label>{{gun._goldCamo.challenge}} </label>
             <i [ngClass]="{
-                'fi fi-br-check':gun._goldCamo.isUnlocked,
+                'fi-br-check-gold fi fi-br-check ':gun._goldCamo.isUnlocked,
                 'fi fi-br-cross':!gun._goldCamo.isUnlocked
-            }" ></i>
+            }" (click)="goldCamoClick(gun)"></i>
         </div>
 
         <div class="gun-camo">

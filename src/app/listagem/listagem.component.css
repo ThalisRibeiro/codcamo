@@ -8,6 +8,7 @@ div{
     --azul:#0017e4;
 }
 i{
+    --gold-collor:  #ed9210;
     margin-left: 5px;    
 }
 .fi-br-check, .fi-br-cross{
@@ -23,6 +24,9 @@ i{
 }
 .fi-br-cross{
     background-color: red;
+}
+.fi-br-check.fi-br-check-gold{
+    background-color:  var(--gold-collor) ;
 }
 .categories-List{
     background-color: var(--divs-bg);
