@@ -8,49 +8,77 @@
         'gun-list-not-show':category.isHidden
     }" >
     <div class="normal-camo">
-        <label>{{gun.name}} </label>
+        <div class="gun-name">
+            <label>{{gun.name}} </label>
+        </div>
+        
+        <div class="gun-camo">
         <label> {{gun.normalCamos[0].challenge}} </label>
         <i [ngClass]="{
             'fi fi-br-check':gun.normalCamos[0].isUnlocked,
             'fi fi-br-cross':!gun.normalCamos[0].isUnlocked
         }" ></i>
-        <label [hidden]="gun.normalCamos[1].isHidden"> {{gun.normalCamos[1].challenge}} </label>
-        <i [hidden]="gun.normalCamos[1].isHidden" [ngClass]="{
-            'fi fi-br-check':gun.normalCamos[1].isUnlocked,
-            'fi fi-br-cross':!gun.normalCamos[1].isUnlocked
-        }" ></i>
-        <label [hidden]="gun.normalCamos[2].isHidden"> {{gun.normalCamos[2].challenge}} </label>
-        <i [hidden]="gun.normalCamos[2].isHidden" [ngClass]="{
-            'fi fi-br-check':gun.normalCamos[2].isUnlocked,
-            'fi fi-br-cross':!gun.normalCamos[2].isUnlocked
-        }" ></i>
-        <label [hidden]="gun.normalCamos[3].isHidden"> {{gun.normalCamos[3].challenge}} </label>
-        <i [hidden]="gun.normalCamos[3].isHidden" [ngClass]="{
-            'fi fi-br-check':gun.normalCamos[3].isUnlocked,
-            'fi fi-br-cross':!gun.normalCamos[3].isUnlocked
-        }" ></i>
+        </div>
+        
+        <div class="gun-camo">
+            <label [hidden]="gun.normalCamos[1].isHidden"> {{gun.normalCamos[1].challenge}} </label>
+            <i [hidden]="gun.normalCamos[1].isHidden" [ngClass]="{
+                'fi fi-br-check':gun.normalCamos[1].isUnlocked,
+                'fi fi-br-cross':!gun.normalCamos[1].isUnlocked
+            }" ></i>
+        </div>
+        
+        <div class="gun-camo">
+            <label [hidden]="gun.normalCamos[2].isHidden"> {{gun.normalCamos[2].challenge}} </label>
+            <i [hidden]="gun.normalCamos[2].isHidden" [ngClass]="{
+                'fi fi-br-check':gun.normalCamos[2].isUnlocked,
+                'fi fi-br-cross':!gun.normalCamos[2].isUnlocked
+            }" ></i>
+        </div>
+
+        <div class="gun-camo">
+            <label [hidden]="gun.normalCamos[3].isHidden"> {{gun.normalCamos[3].challenge}} </label>
+            <i [hidden]="gun.normalCamos[3].isHidden" [ngClass]="{
+                'fi fi-br-check':gun.normalCamos[3].isUnlocked,
+                'fi fi-br-cross':!gun.normalCamos[3].isUnlocked
+            }" ></i>
+        </div>
     </div>
-    <div class="final-camos">
-        <label>{{gun._goldCamo.challenge}} </label>
-        <i [ngClass]="{
-            'fi fi-br-check':gun._goldCamo.isUnlocked,
-            'fi fi-br-cross':!gun._goldCamo.isUnlocked
-        }" ></i>
-        <label>{{gun._platinumCamo.challenge}} </label>
-        <i [ngClass]="{
-            'fi fi-br-check':gun._platinumCamo.isUnlocked,
-            'fi fi-br-cross':!gun._platinumCamo.isUnlocked
-        }" ></i>
-        <label>{{gun._polyCamo.challenge}} </label>
-        <i [ngClass]="{
-            'fi fi-br-check':gun._polyCamo.isUnlocked,
-            'fi fi-br-cross':!gun._polyCamo.isUnlocked
-        }" ></i>
-        <label>{{gun._orionCamo.challenge}} </label>
-        <i [ngClass]="{
-            'fi fi-br-check':gun._orionCamo.isUnlocked,
-            'fi fi-br-cross':!gun._orionCamo.isUnlocked
-        }" ></i>
+    <div class="final-camo">
+        <div class="gun-camo">
+
+            <label>{{gun._goldCamo.challenge}} </label>
+            <i [ngClass]="{
+                'fi fi-br-check':gun._goldCamo.isUnlocked,
+                'fi fi-br-cross':!gun._goldCamo.isUnlocked
+            }" ></i>
+        </div>
+
+        <div class="gun-camo">
+
+            <label>{{gun._platinumCamo.challenge}} </label>
+            <i [ngClass]="{
+                'fi fi-br-check':gun._platinumCamo.isUnlocked,
+                'fi fi-br-cross':!gun._platinumCamo.isUnlocked
+            }" ></i>
+        </div>
+
+        <div class="gun-camo">
+
+            <label>{{gun._polyCamo.challenge}} </label>
+            <i [ngClass]="{
+                'fi fi-br-check':gun._polyCamo.isUnlocked,
+                'fi fi-br-cross':!gun._polyCamo.isUnlocked
+            }" ></i>
+        </div>
+        <div class="gun-camo">
+
+            <label>{{gun._orionCamo.challenge}} </label>
+            <i [ngClass]="{
+                'fi fi-br-check':gun._orionCamo.isUnlocked,
+                'fi fi-br-cross':!gun._orionCamo.isUnlocked
+            }" ></i>
+        </div>
     </div>
         
 
