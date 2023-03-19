@@ -10,6 +10,20 @@ div{
 i{
     margin-left: 5px;    
 }
+.fi-br-check, .fi-br-cross{
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    transition-property: content, background-color;
+    padding-top: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.fi-br-check{
+    background-color: green;
+}
+.fi-br-cross{
+    background-color: red;
+}
 .categories-List{
     background-color: var(--divs-bg);
     border-color: black;
@@ -52,6 +66,7 @@ i{
     visibility: visible;
     max-width: 100%;
     display: grid;
+    margin-top: 5px;
     grid-template-columns: 1.2fr 1fr;
 }
 .gun-camo{
