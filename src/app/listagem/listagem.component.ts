@@ -20,4 +20,15 @@ export class ListagemComponent implements OnInit{
     this.guncategories[i].isHidden = !this.guncategories[i].isHidden;
     console.log(this.guncategories[i].name+' foi clicado, isHidden= '+this.guncategories[i].isHidden )
   }
+  normalCamoClick(gun: Gun, camoId: number){
+    let id = this.findIndex(gun)
+    if (id == -1) {
+      return;
+    }
+    this.gunsList[id].normalCamos[camoId].isUnlocked = !this.gunsList[id].normalCamos[camoId].isUnlocked;
+    this.gunsList[id].isGoldAchievable();
+  }
+  findIndex(gun: Gun):number{
+    return this.gunsList.indexOf(gun);
+  }
 }
