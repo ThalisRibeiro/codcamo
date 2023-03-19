@@ -30,6 +30,9 @@ i{
     transition-duration: 300ms;
     transition-timing-function: ease-in;
 }
+.name-label{
+    font-size: 9vmin;
+}
 .category-name:hover{
     background: linear-gradient(36deg, var(--divs-bg) 4%, var(--divs-bg-darker) 14%);
 }

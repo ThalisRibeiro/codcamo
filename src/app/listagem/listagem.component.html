@@ -1,7 +1,7 @@
 <p>listagem works!</p>
 <div class="categories-List" *ngFor="let category of guncategories; let i = index"> 
     <div class="category-name"  (click)="hiddenClick(i)">        
-        <h3>{{ category.name }}</h3>
+        <label class="name-label">{{ category.name }}</label>
     </div>
     <div class="Gun-List" *ngFor="let gun of gunsList" [ngClass]="{
         'gun-list-show':!category.isHidden,
