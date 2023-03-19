@@ -31,4 +31,11 @@ export class ListagemComponent implements OnInit{
   findIndex(gun: Gun):number{
     return this.gunsList.indexOf(gun);
   }
+  goldCamoClick(gun: Gun){
+    let id = this.findIndex(gun)
+    if (id == -1) {
+      return;
+    }
+    this.gunsList[id]._goldCamo.isUnlocked = !this.gunsList[id]._goldCamo.isUnlocked;
+  }
 }
