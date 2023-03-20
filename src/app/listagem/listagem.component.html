@@ -1,4 +1,3 @@
-<p>listagem works!</p>
 <div class="categories-List" *ngFor="let category of guncategories; let i = index"> 
     <div class="category-name"  (click)="hiddenClick(i)">        
         <label class="name-label">{{ category.name }}</label>
@@ -35,7 +34,7 @@
                 'fi fi-br-cross':!gun.normalCamos[2].isUnlocked
             }" (click)="normalCamoClick(gun,2)"></i>
         </div>
-
+        
         <div class="gun-camo">
             <label [hidden]="gun.normalCamos[3].isHidden"> {{gun.normalCamos[3].challenge}} </label>
             <i [hidden]="gun.normalCamos[3].isHidden" [ngClass]="{
@@ -46,7 +45,7 @@
     </div>
     <div class="final-camo">
         <div class="gun-camo">
-
+            
             <label>{{gun._goldCamo.challenge}} </label>
             <i [ngClass]="{
                 'fi-br-check-gold fi fi-br-check ':gun._goldCamo.isUnlocked,
@@ -55,16 +54,16 @@
         </div>
 
         <div class="gun-camo">
-
+            
             <label>{{gun._platinumCamo.challenge}} </label>
             <i [ngClass]="{
                 'fi fi-br-check':gun._platinumCamo.isUnlocked,
                 'fi fi-br-cross':!gun._platinumCamo.isUnlocked
             }" (click)="platinumClick(gun)"></i>
         </div>
-
+        
         <div class="gun-camo">
-
+            
             <label>{{gun._polyCamo.challenge}} </label>
             <i [ngClass]="{
                 'fi fi-br-check':gun._polyCamo.isUnlocked,
@@ -72,7 +71,7 @@
             }" ></i>
         </div>
         <div class="gun-camo">
-
+            
             <label>{{gun._orionCamo.challenge}} </label>
             <i [ngClass]="{
                 'fi fi-br-check':gun._orionCamo.isUnlocked,
@@ -81,6 +80,7 @@
         </div>
     </div>
         
-
+    
     </div>
 </div>
+<p>Icons por <a href="https://www.flaticon.com/">flaticon</a>. </p>
