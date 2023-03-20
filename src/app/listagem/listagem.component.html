@@ -60,7 +60,7 @@
             <i [ngClass]="{
                 'fi fi-br-check':gun._platinumCamo.isUnlocked,
                 'fi fi-br-cross':!gun._platinumCamo.isUnlocked
-            }" ></i>
+            }" (click)="platinumClick(gun)"></i>
         </div>
 
         <div class="gun-camo">

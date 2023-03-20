@@ -58,4 +58,12 @@ export class ListagemComponent implements OnInit{
     }
     console.log(this.guncategories[this.gunsList[id].categoryId].name+" possui "+this.camoCounter.goldCounter[this.gunsList[id].categoryId]+" golds")
   }
+  platinumClick(gun: Gun){
+    let id = this.findIndex(gun);
+    if (id == -1) {
+      return;
+    }
+    this.gunsList = this.achievable.canUnlockPlatinum(this.gunsList, this.guncategories[this.gunsList[id].categoryId], this.camoCounter.goldCounter[this.gunsList[id].categoryId]);
+    this.gunsList[id]._platinumCamo.isUnlocked = !this.gunsList[id]._platinumCamo.isUnlocked;
+  }
 }
