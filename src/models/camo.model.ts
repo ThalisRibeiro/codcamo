@@ -22,6 +22,7 @@ export class camo{
     }
     public set isUnlocked(isUnlocked : boolean) {
         if (this.isAchievable==false) {
+            this._isUnlocked=false;
             return;
         }
         this._isUnlocked = isUnlocked;
