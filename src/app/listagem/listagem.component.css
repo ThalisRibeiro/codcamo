@@ -9,15 +9,15 @@ div{
 }
 i{
     --gold-collor:  #ed9210;
-    margin-left: 5px;    
+    margin-left: 5px;
 }
 .fi-br-check, .fi-br-cross{
-    transition-duration: 200ms;
-    transition-timing-function: ease-out;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
     transition-property: content, background-color;
-    padding-top: 4px;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-top: 0.1em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
 }
 .fi-br-check{
     background-color: green;
@@ -27,6 +27,10 @@ i{
 }
 .fi-br-check.fi-br-check-gold{
     background-color:  var(--gold-collor) ;
+}
+.fi-br-cross:hover, .fi-br-cross:focus-within{
+    background: linear-gradient(45deg, red 25%, green 70%);
+    /* background-color: #0017e4; */
 }
 .categories-List{
     background-color: var(--divs-bg);
@@ -49,18 +53,21 @@ i{
     transition-timing-function: ease-in;
 }
 .name-label{
-    font-size: 9vmin;
+    font-size: clamp(2rem, 2.3vmax, 4rem);
 }
 .category-name:hover{
     background: linear-gradient(36deg, var(--divs-bg) 4%, var(--divs-bg-darker) 14%);
 }
 .normal-camo{
     display: grid;  
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 0.7fr 0.6fr 1.1fr 1.1fr 1.1fr; 
 }
 .final-camo{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 0.7fr 0.9fr 0.9fr 1.1fr; 
+}
+.normal-camo, .final-camo{
+    font-size: clamp(0.7rem, 1.1vmax, 2.5rem);
 }
 .gun-list-not-show{
     visibility: collapse;
