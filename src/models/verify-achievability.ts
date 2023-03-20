@@ -1,8 +1,31 @@
 import { Gun } from "./gun.model";
-import { gunCategory } from "./guncategory.model";
+import { gunCategory as GunCategory } from "./guncategory.model";
 
 export class achievability{
-    isAllPlatinumAchievable(gunList:Gun[], gunCategories:gunCategory[]){
+    
+    //clean
+    canUnlockPlatinum(gunList:Gun[], gunCategory:GunCategory, goldCount:number): Gun[]{
+        if(goldCount<gunCategory.launchGun){
+            console.log(goldCount+" < "+ gunCategory.launchGun)
+            gunList = this.returnPlatinumGuns(gunList,gunCategory.categoryId, false)
+            return gunList
+        }
+        console.log(goldCount+" > "+ gunCategory.launchGun)
+        gunList = this.returnPlatinumGuns(gunList,gunCategory.categoryId, true)
+        return gunList; 
+    }
+    returnPlatinumGuns(gunList: Gun[],id:number, canUnlock:boolean):Gun[]{
+        gunList.forEach(gun => {
+            if (gun.categoryId == id) {
+                gun._platinumCamo.isAchievable=canUnlock;
+                console.log("Gun: "+ gun.name+" is platinum achievable: "+gun._platinumCamo.isAchievable)
+            }
+        });
+        return gunList;
+    }
+
+    //old
+    isAllPlatinumAchievable(gunList:Gun[], gunCategories:GunCategory[]){
         
         //usando for
         for (let index = 0; index < 11; index++) {
@@ -40,7 +63,7 @@ export class achievability{
         });
         return PlatUnlocked;
     }
-    isCategoryPlatinumAchievable(gunList: Gun[], gunCategory: gunCategory): Gun[]{
+    isCategoryPlatinumAchievable(gunList: Gun[], gunCategory: GunCategory): Gun[]{
         let gunsFromSameCategory = gunList.filter(gun => gun.categoryId = gunCategory.categoryId)
         if(this.countGold(gunsFromSameCategory)>= gunCategory.categoryId){
             gunList = this.changeValues(gunsFromSameCategory, gunList.filter(gun => gun.categoryId != gunCategory.categoryId))
