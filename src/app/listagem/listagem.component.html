@@ -2,7 +2,7 @@
     <div class="category-name"  (click)="hiddenClick(i)">        
         <label class="name-label">{{ category.name }}</label>
     </div>
-    <div class="Gun-List" *ngFor="let gun of gunsList" [ngClass]="{
+    <div class="Gun-List" *ngFor="let gun of gunsList | sameCategory: category.categoryId" [ngClass]="{
         'gun-list-show':!category.isHidden,
         'gun-list-not-show':category.isHidden
     }" >
