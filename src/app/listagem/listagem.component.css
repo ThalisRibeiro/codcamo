@@ -64,7 +64,7 @@ i{
 }
 .final-camo{
     display: grid;
-    grid-template-columns: 0.7fr 0.9fr 0.9fr 1.1fr; 
+    grid-template-columns: 0.8fr 0.9fr 0.9fr 1.1fr; 
 }
 .normal-camo, .final-camo{
     font-size: clamp(0.7rem, 1.1vmax, 2.5rem);
