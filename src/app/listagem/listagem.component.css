@@ -68,7 +68,7 @@ i{
     grid-template-columns: 0.8fr 0.9fr 0.9fr 1.1fr; 
 }
 .normal-camo, .final-camo{
-    font-size: clamp(0.7rem, .7vmax + 0.5rem, 2.5rem);
+    font-size: clamp(1rem, .7vmax + 0.5rem, 2.5rem);
 }
 .gun-list-not-show{
     visibility: collapse;
@@ -89,3 +89,48 @@ i{
 .gun-camo{
     text-align: end;
 }
+@media (max-width: 1860px) and (min-width: 801px){
+    .gun-list-show{
+        grid-template-rows: 1fr, 1fr, 1fr;
+        grid-template-columns: none;
+        margin-bottom:  0.02vmax;
+    }
+    .gun-name{
+        text-align: center;
+        margin-bottom: .5vmax;
+        font-size: clamp(1.2rem, .8vmax + 0.6rem, 2rem);
+    }
+    .normal-camo, .final-camo{
+        grid-template-columns: 0.8fr 0.9fr 0.9fr 1.1fr;         
+        margin-right: 0.9vmax; 
+    }
+}
+    @media (max-width:800px){
+        .gun-list-show{
+            grid-template-rows: 0.5fr 1.7fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        .gun-name{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+        }
+        .normal-camo, .final-camo{
+            grid-template-columns: none;
+            grid-template-rows: 1fr 1fr 1fr 1fr;         
+            margin-right: 0px; 
+        }
+        .normal-camo{
+            margin-right: 0.7vmax;
+        }
+        .gun-camo{
+            display: flexbox;
+        }
+        .gun-camo > label{
+            display: block;
+            text-align: center;
+        }
+        .gun-camo > i{
+            margin-right: 50%;
+        }
+    }
