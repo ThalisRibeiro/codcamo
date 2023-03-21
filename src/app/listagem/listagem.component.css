@@ -60,7 +60,8 @@ i{
 }
 .normal-camo{
     display: grid;  
-    grid-template-columns: 0.7fr 0.6fr 1.1fr 1.1fr 1.1fr; 
+    grid-template-columns: 0.6fr 1.1fr 1.1fr 1.1fr;
+    margin-right: 0.9vmax; 
 }
 .final-camo{
     display: grid;
@@ -79,8 +80,11 @@ i{
     max-width: 100%;
     display: grid;
     margin-top: 5px;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 0.2fr 1fr 1fr;
     transition: 400ms ease-out;
+    border-width: 0px 0px clamp(0.002rem, 0.02vmax, 0.2rem) 0  ;
+    border-color: black;
+    border-style: solid;
 }
 .gun-camo{
     text-align: end;
