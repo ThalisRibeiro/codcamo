@@ -41,17 +41,21 @@ export class ListagemComponent implements OnInit{
     if (id == -1) {
       return;
     }
+    let beforeChange =this.gunsList[id]._goldCamo.isUnlocked; 
     this.gunsList[id]._goldCamo.isUnlocked = !this.gunsList[id]._goldCamo.isUnlocked;
-    this.totalDeGold(id);
+
+    this.totalDeGold(id, beforeChange);
 
   }
-  totalDeGold(id:number) {
+  totalDeGold(id:number, wasUnlockedBefore:boolean) {
     switch (this.gunsList[id]._goldCamo.isUnlocked) {
       case true:
         this.camoCounter.goldCounter[this.gunsList[id].categoryId] += 1;
         break;
 
       default:
+        if(wasUnlockedBefore==false)
+        break;
         if(this.camoCounter.goldCounter[this.gunsList[id].categoryId]>0)
         this.camoCounter.goldCounter[this.gunsList[id].categoryId] -= 1;
         break;
