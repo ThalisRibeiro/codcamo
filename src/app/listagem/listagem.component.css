@@ -67,11 +67,12 @@ i{
     grid-template-columns: 0.8fr 0.9fr 0.9fr 1.1fr; 
 }
 .normal-camo, .final-camo{
-    font-size: clamp(0.7rem, 1.1vmax, 2.5rem);
+    font-size: clamp(0.7rem, .7vmax + 0.5rem, 2.5rem);
 }
 .gun-list-not-show{
     visibility: collapse;
     height: 0px;
+    transition: 200ms ease-out;
 }
 .gun-list-show{
     visibility: visible;
@@ -79,6 +80,7 @@ i{
     display: grid;
     margin-top: 5px;
     grid-template-columns: 1.2fr 1fr;
+    transition: 400ms ease-out;
 }
 .gun-camo{
     text-align: end;
