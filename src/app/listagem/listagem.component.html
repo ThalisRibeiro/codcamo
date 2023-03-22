@@ -59,7 +59,7 @@
             <i [ngClass]="{
                 'fi fi-br-check':gun._platinumCamo.isUnlocked,
                 'fi fi-br-cross':!gun._platinumCamo.isUnlocked
-            }" (click)="platinumClick(gun)"></i>
+            }" (click)="platinumPolyOrionClick(gun,0)"></i>
         </div>
         
         <div class="gun-camo">
@@ -68,7 +68,7 @@
             <i [ngClass]="{
                 'fi fi-br-check':gun._polyCamo.isUnlocked,
                 'fi fi-br-cross':!gun._polyCamo.isUnlocked
-            }" ></i>
+            }" (click)="platinumPolyOrionClick(gun,1)"></i>
         </div>
         <div class="gun-camo">
             
@@ -76,7 +76,7 @@
             <i [ngClass]="{
                 'fi fi-br-check':gun._orionCamo.isUnlocked,
                 'fi fi-br-cross':!gun._orionCamo.isUnlocked
-            }" ></i>
+            }"  (click)="platinumPolyOrionClick(gun,2)"></i>
         </div>
     </div>
         

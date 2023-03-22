@@ -10,7 +10,7 @@ export class achievability{
             gunList = this.returnPlatinumGuns(gunList,gunCategory.categoryId, false)
             return gunList
         }
-        console.log(goldCount+" > "+ gunCategory.launchGun)
+        console.log(goldCount+" >= "+ gunCategory.launchGun)
         gunList = this.returnPlatinumGuns(gunList,gunCategory.categoryId, true)
         return gunList; 
     }
@@ -18,12 +18,53 @@ export class achievability{
         gunList.forEach(gun => {
             if (gun.categoryId == id) {
                 gun._platinumCamo.isAchievable=canUnlock;
-                console.log("Gun: "+ gun.name+" is platinum achievable: "+gun._platinumCamo.isAchievable)
+                // console.log("Gun: "+ gun.name+" is platinum achievable: "+gun._platinumCamo.isAchievable)
             }
         });
         return gunList;
     }
 
+    canUnlockPoly(gunList:Gun[], platCount:number){
+        let precisaParaDesbloquear = 51;
+        if (platCount< precisaParaDesbloquear) {
+            gunList = this.changePolyAchievable(gunList,false);
+            console.log(platCount + "<"+ precisaParaDesbloquear);
+        }
+        else{
+            gunList = this.changePolyAchievable(gunList,true);
+            console.log(platCount + ">="+ precisaParaDesbloquear);
+        }
+        return gunList
+    }
+
+    changePolyAchievable(gunList:Gun[], canUnlock:boolean){
+        gunList.forEach(gun => {
+            gun._polyCamo.isAchievable=canUnlock;
+            // console.log("Gun: "+ gun.name+" is poly achievable: "+gun._polyCamo.isAchievable)
+        });
+        return gunList
+    }
+
+    canUnlockOrion(gunList:Gun[], polyCount:number):Gun[]{
+        let precisaParaDesbloquear = 51;
+        if (polyCount< precisaParaDesbloquear) {
+            gunList = this.changeOrionAchievable(gunList,false)
+            console.log(polyCount + "<"+ precisaParaDesbloquear)
+        }
+        else{
+            gunList = this.changeOrionAchievable(gunList,true)
+            console.log(polyCount + ">="+ precisaParaDesbloquear)
+        }
+        return gunList;
+    }
+
+    changeOrionAchievable(gunList:Gun[], canUnlock:boolean){
+        gunList.forEach(gun => {
+            gun._orionCamo.isAchievable=canUnlock;
+            // console.log("Gun: "+ gun.name+" is orion achievable: "+gun._orionCamo.isAchievable)
+        });
+        return gunList
+    }
     //old
     isAllPlatinumAchievable(gunList:Gun[], gunCategories:GunCategory[]){
         

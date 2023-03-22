@@ -62,12 +62,77 @@ export class ListagemComponent implements OnInit{
     }
     console.log(this.guncategories[this.gunsList[id].categoryId].name+" possui "+this.camoCounter.goldCounter[this.gunsList[id].categoryId]+" golds")
   }
-  platinumClick(gun: Gun){
+  //platPolyId 0 para plat 1 para orion
+  platinumPolyOrionClick(gun: Gun, platPolyId:number){
     let id = this.findIndex(gun);
     if (id == -1) {
       return;
     }
+    let beforeChange;
+    switch (platPolyId) {
+      case 0:  
+        beforeChange = this.gunsList[id]._platinumCamo.isUnlocked;
+        this.changePlat(id);
+        this.totalDePlatinum(id, beforeChange, platPolyId)
+        break;
+      case 1:
+        beforeChange = this.gunsList[id]._polyCamo.isUnlocked;
+        this.changePoly(id);
+        this.totalDePoly(id, beforeChange, platPolyId)
+        break;
+      case 2:
+        this.changeOrion(id);
+        break;
+      default:
+        break;
+    }
+    
+  }
+  
+  
+  private changePlat(id: number) {
     this.gunsList = this.achievable.canUnlockPlatinum(this.gunsList, this.guncategories[this.gunsList[id].categoryId], this.camoCounter.goldCounter[this.gunsList[id].categoryId]);
     this.gunsList[id]._platinumCamo.isUnlocked = !this.gunsList[id]._platinumCamo.isUnlocked;
   }
+
+  private changePoly(id: number) {
+    this.gunsList = this.achievable.canUnlockPoly(this.gunsList, this.camoCounter.platPolyCounter[0]);
+    this.gunsList[id]._polyCamo.isUnlocked = !this.gunsList[id]._polyCamo.isUnlocked;
+  }
+  private changeOrion(id: number) {
+    this.gunsList = this.achievable.canUnlockOrion(this.gunsList, this.camoCounter.platPolyCounter[1]);
+    this.gunsList[id]._orionCamo.isUnlocked = !this.gunsList[id]._orionCamo.isUnlocked;
+  }
+
+  //id 0 para plat 1 para orion
+  totalDePlatinum(id:number, wasUnlockedBefore:boolean,platPolyId:number) {
+    switch (this.gunsList[id]._platinumCamo.isUnlocked) {
+      case true:
+        this.camoCounter.platPolyCounter[platPolyId]+= 1;
+        break;
+
+      default:
+        if(wasUnlockedBefore==false)
+        break;
+        if(this.camoCounter.platPolyCounter[platPolyId]>0)
+        this.camoCounter.platPolyCounter[platPolyId] -= 1;
+        break;
+    }
+    console.log(this.camoCounter.platPolyCounter[0]+" platinas desbloqueadas " + this.camoCounter.platPolyCounter[1]+" poly desbloqueadas ");
+  }  
+  totalDePoly(id:number, wasUnlockedBefore:boolean,platPolyId:number) {
+    switch (this.gunsList[id]._polyCamo.isUnlocked) {
+      case true:
+        this.camoCounter.platPolyCounter[platPolyId]+= 1;
+        break;
+
+      default:
+        if(wasUnlockedBefore==false)
+        break;
+        if(this.camoCounter.platPolyCounter[platPolyId]>0)
+        this.camoCounter.platPolyCounter[platPolyId] -= 1;
+        break;
+    }
+    console.log(this.camoCounter.platPolyCounter[0]+" platinas desbloqueadas " + this.camoCounter.platPolyCounter[1]+" poly desbloqueadas ");
+  }  
 }
