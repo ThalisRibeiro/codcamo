@@ -12,7 +12,7 @@ export class DefaultDataService {
     
   let gunCategories: gunCategory[] = [new gunCategory('Assault Rifle', 0, 8), new gunCategory('Battle Rifle', 1, 4), 
   new gunCategory('SMG', 2, 8),  new gunCategory('shotgun', 3, 4), new gunCategory('LMG', 4, 6),
-  new gunCategory('Marksman Rifle', 5, 6), new gunCategory('Sniper Rifle', 6, 4), 
+  new gunCategory('Marksman Rifle', 5, 5), new gunCategory('Sniper Rifle', 6, 4), 
   new gunCategory('Handguns', 7, 5), new gunCategory('Launchers', 8, 4), new gunCategory('Melee', 9, 2)];
   return gunCategories;
 }
