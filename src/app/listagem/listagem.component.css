@@ -1,20 +1,11 @@
-@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css');
-body{
-    height: 100%;
-}
-div{
-    --divs-bg: #4747473b;
-    --divs-bg-darker: #474747c5 ;
-    --azul:#0017e4;
-}
 i{
     --gold-collor:  #ed9210;
     margin-left: 5px;
 }
 .fi-br-check, .fi-br-cross{
+    transition-property: content, background-color;
     transition-duration: 500ms;
     transition-timing-function: ease-in-out;
-    transition-property: content, background-color;
     padding-top: 0.1em;
     padding-left: 0.1em;
     padding-right: 0.1em;
@@ -28,10 +19,10 @@ i{
 .fi-br-check.fi-br-check-gold{
     background-color:  var(--gold-collor) ;
 }
-.fi-br-cross:hover, .fi-br-cross:focus-within{
+/* .fi-br-cross:hover, .fi-br-cross:focus-within{
     background: linear-gradient(45deg, red 25%, green 70%);
-    /* background-color: #0017e4; */
-}
+    background-color: #0017e4;
+} */
 .categories-List{
     background-color: var(--divs-bg);
     border-color: black;

@@ -1,11 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css');
 :root{
-    --primary-bg: #1380b688;
-    --secondary-bg: #0eb91c80;
+    --primary-bg: black;
+    --secondary-bg: #7ac32c;
     /* font-size: 0.8vmax; */
-    --primary-btn-bg: #88888823;
+    --primary-btn-bg: #097914;
+
+    color: white;
+    --divs-bg: #4747473b;
+    --divs-bg-darker: #474747c5 ;
+    --azul:#0017e4;
 }
 body{
-    /* height: 100vh; */
-    background: linear-gradient(45deg,var(--primary-bg),var(--secondary-bg));
+    height: max-content;
+    background: linear-gradient(36deg, var(--primary-bg) 80%, var(--secondary-bg) 90%);
 }
