@@ -5,6 +5,7 @@ import { Gun } from 'src/models/gun.model';
 import { DefaultDataService } from '../services/default-data.service';
 import { CamoCounter } from 'src/models/camos-counter.model';
 import { achievability } from 'src/models/verify-achievability';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-listagem',
@@ -19,7 +20,20 @@ export class ListagemComponent implements OnInit{
   ngOnInit(): void {
       let mockData :DefaultDataService = new DefaultDataService();
       this.guncategories = mockData.getDefaultGunCategory();
-      this.gunsList = mockData.getDefaultGunList();
+      // console.log(this.gunsList);
+      let localGun:Gun[] = this.localStorage.getGunList();
+      if(localGun.length<2){
+        this.gunsList = mockData.getDefaultGunList();
+        return;
+      }
+      this.gunsList = localGun;
+      console.log(this.gunsList)
+  }
+  constructor(private localStorage: LocalStorageService){
+    
+  }
+  save(){
+    this.localStorage.saveItems(this.gunsList,3)
   }
   hiddenClick(i:number){
     this.guncategories[i].isHidden = !this.guncategories[i].isHidden;
@@ -32,6 +46,7 @@ export class ListagemComponent implements OnInit{
     }
     this.gunsList[id].normalCamos[camoId].isUnlocked = !this.gunsList[id].normalCamos[camoId].isUnlocked;
     this.gunsList[id].isGoldAchievable();
+    this.save();
   }
   findIndex(gun: Gun):number{
     return this.gunsList.indexOf(gun);
@@ -45,7 +60,7 @@ export class ListagemComponent implements OnInit{
     this.gunsList[id]._goldCamo.isUnlocked = !this.gunsList[id]._goldCamo.isUnlocked;
 
     this.totalDeGold(id, beforeChange);
-
+    this.save();
   }
   totalDeGold(id:number, wasUnlockedBefore:boolean) {
     switch (this.gunsList[id]._goldCamo.isUnlocked) {
@@ -86,7 +101,7 @@ export class ListagemComponent implements OnInit{
       default:
         break;
     }
-    
+    this.save();
   }
   
   
