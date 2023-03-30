@@ -2,6 +2,9 @@ i{
     --gold-collor:  #ed9210;
     margin-left: 5px;
 }
+p{
+    font-size: clamp(1rem, 1.5vmax, 2rem);
+}
 .fi-br-check, .fi-br-cross{
     transition-property: content, background-color;
     transition-duration: 500ms;
