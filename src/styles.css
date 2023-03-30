@@ -12,6 +12,6 @@
     --azul:#0017e4;
 }
 body{
-    height: max-content;
+    /* height: max-content + 50vh; */
     background: linear-gradient(36deg, var(--primary-bg) 80%, var(--secondary-bg) 90%);
 }
