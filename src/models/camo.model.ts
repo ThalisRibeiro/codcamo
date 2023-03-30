@@ -27,4 +27,12 @@ export class camo{
         }
         this._isUnlocked = isUnlocked;
     }
+    public toJSON(){
+        return{
+            isHidden: this.isHidden,
+            challenge: this._challenge,
+            isAchievable: this.isAchievable,
+            isUnlocked: this._isUnlocked
+        }
+    }
 }

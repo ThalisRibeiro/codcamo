@@ -28,11 +28,12 @@ export class Gun {
         this._categoryId = v;
     }
     
-    private _normalCamos: camo[] = [];
+    public _normalCamos: camo[] = [];
 
     public get normalCamos():camo[]{
         return this._normalCamos
     }
+
     public _goldCamo: camo;
     public _platinumCamo: camo;
     public _polyCamo: camo ;
@@ -47,12 +48,13 @@ export class Gun {
     }
     public setCamos(Chal1:string ="", Chal2:string = "",Chal3:string= "",Chal4:string=""){
         if(this.hasOnlyOneNormal()){
-            this._normalCamos = [new camo(Chal1,true),new camo(Chal2,true,true),new camo(Chal3,true,true),new camo(Chal4,true,true)];
+            this._normalCamos = [new camo(Chal1,true),new camo(Chal2,true,false,true),new camo(Chal3,true,false,true),new camo(Chal4,true,false,true)];
             return;
         }
         this._normalCamos = [new camo(Chal1,true), new camo(Chal2,true),new camo(Chal3,true),new camo(Chal4,true)];
-        
+       
     }
+    
     isGoldAchievable(){
         if(this.hasOnlyOneNormal()){
             if(this._normalCamos[0].isUnlocked==true)
@@ -66,6 +68,16 @@ export class Gun {
             else
                 this._goldCamo.isAchievable = false;
         }
-
+    }
+    public toJSON(){
+        return{
+            name: this.name,
+            categoryId: this.categoryId,
+            _normalCamos: this._normalCamos,
+            _goldCamo: this._goldCamo,
+            _platinumCamo: this._platinumCamo,
+            _polyCamo: this._polyCamo,
+            _orionCamo: this._orionCamo
+        }
     }
 }
