@@ -54,7 +54,13 @@ export class Gun {
         this._normalCamos = [new camo(Chal1,true), new camo(Chal2,true),new camo(Chal3,true),new camo(Chal4,true)];
        
     }
-    
+    public setNormalCamosWithData(camos:camo[]){
+        if(this.hasOnlyOneNormal()){
+            this._normalCamos = [new camo(camos[0].challenge,true, camos[0].isUnlocked),new camo('',true,false,true),new camo('',true,false,true),new camo('',true,false,true)];
+            return;
+        }
+        this._normalCamos = [new camo(camos[0].challenge,true,camos[0].isUnlocked),new camo(camos[1].challenge,true,camos[1].isUnlocked),new camo(camos[2].challenge,true,camos[2].isUnlocked),new camo(camos[3].challenge,true,camos[3].isUnlocked) ]
+    }
     isGoldAchievable(){
         if(this.hasOnlyOneNormal()){
             if(this._normalCamos[0].isUnlocked==true)
