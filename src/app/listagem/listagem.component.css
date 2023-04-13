@@ -1,5 +1,8 @@
 i{
     --gold-collor:  #ed9210;
+    --plat-collor: #797979;
+    --poly-collor: #222875;
+    --orion-collor: #38096e;
     margin-left: 5px;
 }
 p{
@@ -28,6 +31,15 @@ label{
 }
 .fi-br-check.fi-br-check-gold{
     background-color:  var(--gold-collor) ;
+}
+.fi-br-check.fi-br-check-plat{
+    background-color:  var(--plat-collor) ;
+}
+.fi-br-check.fi-br-check-poly{
+    background-color:  var(--poly-collor) ;
+}
+.fi-br-check.fi-br-check-orion{
+    background-color:  var(--orion-collor) ;
 }
 /* .fi-br-cross:hover, .fi-br-cross:focus-within{
     background: linear-gradient(45deg, red 25%, green 70%);
