@@ -7,6 +7,7 @@ import { CamoCounter } from 'src/models/camos-counter.model';
 import { achievability } from 'src/models/verify-achievability';
 import { LocalStorageService } from '../services/local-storage.service';
 import { UpdateS3Service } from '../services/update-s3.service';
+import { ReseterService } from '../services/reseter.service';
 
 @Component({
   selector: 'app-listagem',
@@ -38,8 +39,13 @@ export class ListagemComponent implements OnInit{
       this.gunsList = localGun;
       console.log(this.gunsList)
   }
-  constructor(private localStorage: LocalStorageService, private updateS3: UpdateS3Service){
+  constructor(private localStorage: LocalStorageService, private updateS3: UpdateS3Service, private resetService: ReseterService){
     
+  }
+  reseter(){
+    this.gunsList = this.resetService.resetGuns(this.gunsList)
+    this.camoCounter = this.resetService.resetCount();
+    this.save()
   }
   save(){
     this.localStorage.saveItems(this.gunsList,3, this.camoCounter)
