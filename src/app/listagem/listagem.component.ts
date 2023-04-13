@@ -30,9 +30,11 @@ export class ListagemComponent implements OnInit{
       }
       //Caso tenha da season 2 mas não season 3 launch
       if(localGun.length<58){
+        this.camoCounter = this.localStorage.getCounter();
         this.gunsList = this.updateS3.updatedGunList(localGun)
         return;
       }
+      this.camoCounter = this.localStorage.getCounter();
       this.gunsList = localGun;
       console.log(this.gunsList)
   }
@@ -40,7 +42,7 @@ export class ListagemComponent implements OnInit{
     
   }
   save(){
-    this.localStorage.saveItems(this.gunsList,3)
+    this.localStorage.saveItems(this.gunsList,3, this.camoCounter)
   }
   hiddenClick(i:number){
     this.guncategories[i].isHidden = !this.guncategories[i].isHidden;
