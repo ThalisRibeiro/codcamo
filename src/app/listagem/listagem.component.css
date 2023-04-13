@@ -5,6 +5,13 @@ i{
 p{
     font-size: clamp(1rem, 1.5vmax, 2rem);
 }
+label{
+    text-shadow: 		
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;;
+}
 .fi-br-check, .fi-br-cross{
     transition-property: content, background-color;
     transition-duration: 500ms;
@@ -82,7 +89,24 @@ p{
 }
 .gun-camo{
     text-align: end;
+    background-size: cover;
 }
+.camo-gold{
+    background-image: url("../../assets/gold.webp");
+}
+
+.camo-platinum{
+    background-image: url("../../assets/platinum.webp");
+}
+
+.camo-poly{
+    background-image: url("../../assets/polyatomic.webp");
+}
+
+.camo-orion{
+    background-image: url("../../assets/orion.webp");
+}
+
 @media (max-width: 1860px) and (min-width: 801px){
     .gun-list-show{
         grid-template-rows: 1fr, 1fr, 1fr;

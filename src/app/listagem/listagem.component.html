@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="final-camo">
-        <div class="gun-camo">
+        <div class="gun-camo camo-gold">
             
             <label>{{gun._goldCamo.challenge}} </label>
             <i [ngClass]="{
@@ -53,7 +53,7 @@
             }" (click)="goldCamoClick(gun)"></i>
         </div>
 
-        <div class="gun-camo">
+        <div class="gun-camo camo-platinum">
             
             <label>{{gun._platinumCamo.challenge}} </label>
             <i [ngClass]="{
@@ -62,7 +62,7 @@
             }" (click)="platinumPolyOrionClick(gun,0)"></i>
         </div>
         
-        <div class="gun-camo">
+        <div class="gun-camo camo-poly">
             
             <label>{{gun._polyCamo.challenge}} </label>
             <i [ngClass]="{
@@ -70,7 +70,7 @@
                 'fi fi-br-cross':!gun._polyCamo.isUnlocked
             }" (click)="platinumPolyOrionClick(gun,1)"></i>
         </div>
-        <div class="gun-camo">
+        <div class="gun-camo camo-orion">
             
             <label>{{gun._orionCamo.challenge}} </label>
             <i [ngClass]="{
