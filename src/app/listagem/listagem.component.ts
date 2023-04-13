@@ -30,7 +30,7 @@ export class ListagemComponent implements OnInit{
       }
       //Caso tenha da season 2 mas não season 3 launch
       if(localGun.length<58){
-        this.camoCounter = this.localStorage.getCounter();
+        // this.camoCounter = this.localStorage.getCounter();
         this.gunsList = this.updateS3.updatedGunList(localGun)
         return;
       }
