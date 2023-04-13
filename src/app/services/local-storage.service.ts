@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { camo } from 'src/models/camo.model';
+import { CamoCounter } from 'src/models/camos-counter.model';
 import { Gun } from 'src/models/gun.model';
 
 @Injectable({
@@ -8,9 +9,10 @@ import { Gun } from 'src/models/gun.model';
 export class LocalStorageService {
 
   constructor() { }
-  saveItems(gunsList: Gun[], version: Number){
+  saveItems(gunsList: Gun[], version: Number, counters: CamoCounter){
     localStorage.setItem('gunsList',JSON.stringify(gunsList));
     localStorage.setItem('version', version.toString());
+    localStorage.setItem('count', JSON.stringify(counters))
     console.log('itens setados')
   }
 
@@ -25,6 +27,13 @@ export class LocalStorageService {
   }
   getVersion(){
 
+  }
+  getCounter(): CamoCounter{
+    let jsonItem = localStorage.getItem('count');
+    if(jsonItem == null)
+      return new CamoCounter;
+    let counter:CamoCounter = JSON.parse(jsonItem); 
+    return counter
   }
   gunListCreator(gunListFromJson: Gun[]):Gun[]{
     let newList:Gun[] = [];
