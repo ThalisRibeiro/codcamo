@@ -6,6 +6,7 @@ import { DefaultDataService } from '../services/default-data.service';
 import { CamoCounter } from 'src/models/camos-counter.model';
 import { achievability } from 'src/models/verify-achievability';
 import { LocalStorageService } from '../services/local-storage.service';
+import { UpdateS3Service } from '../services/update-s3.service';
 
 @Component({
   selector: 'app-listagem',
@@ -20,16 +21,22 @@ export class ListagemComponent implements OnInit{
   ngOnInit(): void {
       let mockData :DefaultDataService = new DefaultDataService();
       this.guncategories = mockData.getDefaultGunCategory();
-      // console.log(this.gunsList);
       let localGun:Gun[] = this.localStorage.getGunList();
+      
+      //Caso não tenha as armas até season 2
       if(localGun.length<2){
         this.gunsList = mockData.getDefaultGunList();
+        return;
+      }
+      //Caso tenha da season 2 mas não season 3 launch
+      if(localGun.length<58){
+        this.gunsList = this.updateS3.updatedGunList(localGun)
         return;
       }
       this.gunsList = localGun;
       console.log(this.gunsList)
   }
-  constructor(private localStorage: LocalStorageService){
+  constructor(private localStorage: LocalStorageService, private updateS3: UpdateS3Service){
     
   }
   save(){
