@@ -1,5 +1,5 @@
 # UPDATE SEASON 3
-## Novas armas da season 3 FJX Imperium 
+## Novas armas da season 3 
 * Sniper FJX Imperium
 * Cronen Squall
 ## Botão de reset
