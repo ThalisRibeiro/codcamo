@@ -26,12 +26,13 @@ export class ListagemComponent implements OnInit{
       
       //Caso não tenha as armas até season 2
       if(localGun.length<2){
-        this.gunsList = mockData.getDefaultGunList();
+        this.gunsList = this.updateS3.updatedGunList(mockData.getDefaultGunList());
         return;
       }
       //Caso tenha da season 2 mas não season 3 launch
       if(localGun.length<58){
         // this.camoCounter = this.localStorage.getCounter();
+        alert('CASO TENHA USADO ANTES DA S3, CLIQUE EM RESET')
         this.gunsList = this.updateS3.updatedGunList(localGun)
         return;
       }
