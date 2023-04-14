@@ -8,12 +8,22 @@ i{
 p{
     font-size: clamp(1rem, 1.5vmax, 2rem);
 }
-label{
+label, button{
     text-shadow: 		
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;;
+}
+.resetDiv{
+    display: flex;
+    justify-content: center;
+}
+.resetDiv > button{
+    background-color: var(--divs-bg-darker);
+    align-self: center;
+    color: white;
+    font-size: clamp(0.9rem, 1.3vmax, 2rem);
 }
 .fi-br-check, .fi-br-cross{
     transition-property: content, background-color;
