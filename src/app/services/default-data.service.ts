@@ -19,10 +19,10 @@ export class DefaultDataService {
 
 public getDefaultGunList():Gun[]{
   
-  return this.getFullSeason3Guns();
+  return this.getFullSeason2Guns();
   // gun.normalCamos[0].isUnlocked = true
   }
-  public getFullSeason3Guns(): Gun[]{
+  public getFullSeason2Guns(): Gun[]{
     let guns:Gun[] =[];
     //ASSAULT
     let gun = new Gun("M4",0, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOTS', 'unlock 51 poly');
