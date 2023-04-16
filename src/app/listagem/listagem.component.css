@@ -25,6 +25,9 @@ label, button{
     color: white;
     font-size: clamp(0.9rem, 1.3vmax, 2rem);
 }
+button, .fi-br-check, .fi-br-cross, .category-name{
+    cursor: pointer;
+}
 .fi-br-check, .fi-br-cross{
     transition-property: content, background-color;
     transition-duration: 500ms;
@@ -69,7 +72,7 @@ label, button{
     margin-bottom: 0;
     padding-bottom: 2vmin;
 }
-.category-name{
+.category-name, .resetDiv > button{
     background-color: var(--divs-bg-darker);
     transition-property: background-color;
     transition-duration: 300ms;
@@ -78,7 +81,7 @@ label, button{
 .name-label{
     font-size: clamp(2rem, 2.3vmax, 4rem);
 }
-.category-name:hover{
+.category-name:hover, .resetDiv > button:hover{
     background: linear-gradient(36deg, var(--divs-bg) 4%, var(--divs-bg-darker) 14%);
 }
 .normal-camo{
