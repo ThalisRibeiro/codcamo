@@ -13,7 +13,7 @@ export class LocalStorageService {
     localStorage.setItem('gunsList',JSON.stringify(gunsList));
     localStorage.setItem('version', version.toString());
     localStorage.setItem('count', JSON.stringify(counters))
-    console.log('itens setados')
+    // console.log('itens setados')
   }
 
   getGunList():Gun[]{
@@ -25,8 +25,8 @@ export class LocalStorageService {
     // return gunsList
     return this.gunListCreator(gunsList);
   }
-  getVersion(){
-
+  excludeStorage(){
+    localStorage.clear();
   }
   getCounter(): CamoCounter{
     let jsonItem = localStorage.getItem('count');

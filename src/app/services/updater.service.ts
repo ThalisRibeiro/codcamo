@@ -35,17 +35,23 @@ export class UpdaterService {
     }
   }
 
-  checkGunQuantitySwitch(gunList: Gun[]): Gun[]{
+  checkGunQuantitySwitch(gunList: Gun[] | undefined): Gun[]{
     let gunListReturner:Gun[];
-    switch (gunList.length) {
-      case 62:
-        gunListReturner = gunList;
-        this._loadCount = true;
-        break;
-    
-      default:
-        gunListReturner = this.getAllGuns()
-        break;
+    if(gunList != undefined)
+      switch (gunList.length) {
+        case 62:
+          gunListReturner = gunList;
+          this._loadCount = true;
+          break;
+      
+        default:
+          gunListReturner = this.getAllGuns()
+          this._loadCount = false
+          break;
+      }
+    else{
+      gunListReturner = this.getAllGuns()
+      this._loadCount = false
     }
     return gunListReturner;
   }
