@@ -8,6 +8,7 @@ import { achievability } from 'src/models/verify-achievability';
 import { LocalStorageService } from '../services/local-storage.service';
 import { UpdateS3Service } from '../services/update-s3.service';
 import { ReseterService } from '../services/reseter.service';
+import { UpdaterService } from '../services/updater.service';
 
 @Component({
   selector: 'app-listagem',
@@ -19,35 +20,19 @@ export class ListagemComponent implements OnInit{
   public gunsList: Gun[] = [];
   camoCounter = new CamoCounter;
   achievable = new achievability;
+  
   ngOnInit(): void {
       let mockData :DefaultDataService = new DefaultDataService();
       this.guncategories = mockData.getDefaultGunCategory();
       let localGun:Gun[] = this.localStorage.getGunList();
       
-      //Caso não tenha as armas até season 2
-      if(localGun.length<2){
-        this.gunsList = this.updateS3.updatedGunList(mockData.getDefaultGunList());
-        return;
+      this.gunsList = this.updater.checkGunQuantitySwitch(localGun);
+      if(this.updater.loadCount == true){
+        this.camoCounter = this.localStorage.getCounter();
       }
-      //Caso tenha da season 2 mas não season 3 launch
-      if(localGun.length<58){
-        // this.camoCounter = this.localStorage.getCounter();
-        alert('CASO TENHA USADO ANTES DA S3, CLIQUE EM RESET')
-        this.gunsList = this.updateS3.updatedGunList(localGun)
-        return;
-      }
-      if(localGun.length==59){
-        //Bug que não possui m4
-        alert('CASO TENHA USADO ANTES DA S3, CLIQUE EM RESET')
-        this.gunsList = this.updateS3.addM4(localGun)
-        
-        return;
-      }
-      this.camoCounter = this.localStorage.getCounter();
-      this.gunsList = localGun;
-      console.log(this.gunsList)
   }
-  constructor(private localStorage: LocalStorageService, private updateS3: UpdateS3Service, private resetService: ReseterService){
+
+  constructor(private localStorage: LocalStorageService, private updater: UpdaterService, private resetService: ReseterService){
     
   }
   reseter(){
