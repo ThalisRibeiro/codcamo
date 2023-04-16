@@ -36,6 +36,13 @@ export class ListagemComponent implements OnInit{
         this.gunsList = this.updateS3.updatedGunList(localGun)
         return;
       }
+      if(localGun.length==59){
+        //Bug que não possui m4
+        alert('CASO TENHA USADO ANTES DA S3, CLIQUE EM RESET')
+        this.gunsList = this.updateS3.addM4(localGun)
+        
+        return;
+      }
       this.camoCounter = this.localStorage.getCounter();
       this.gunsList = localGun;
       console.log(this.gunsList)
