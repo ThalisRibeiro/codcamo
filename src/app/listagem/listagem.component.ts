@@ -36,7 +36,7 @@ export class ListagemComponent implements OnInit{
     
   }
   reseter(){
-    this.gunsList = this.resetService.resetGuns(this.gunsList)
+    this.gunsList = this.resetService.fullResetGuns()
     this.camoCounter = this.resetService.resetCount();
     this.save()
   }
