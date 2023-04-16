@@ -27,7 +27,7 @@ public getDefaultGunList():Gun[]{
     //ASSAULT
     let gun = new Gun("M4",0, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOTS', 'unlock 51 poly');
   
-    gun.setCamos('50 kill','50 ADS','10 DOUBLE KILL','15 BEHIND',)
+    gun.setCamos('50 KILLS','50 ADS','10 DOUBLE KILL','15 BEHIND',)
 
     guns.push(gun);
     
