@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
 import { CamoCounter } from 'src/models/camos-counter.model';
 import { Gun } from 'src/models/gun.model';
+import { LocalStorageService } from './local-storage.service';
+import { UpdaterService } from './updater.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReseterService {
 
-  constructor() { }
+  constructor(private localStorage: LocalStorageService, private update: UpdaterService) { }
+  
+  fullResetGuns():Gun[]{
+    this.localStorage.excludeStorage();
+    return this.update.checkGunQuantitySwitch(undefined);
+  }
+
   resetGuns(gunList: Gun[]):Gun[]{
     let newGunList:Gun[]=[];
     gunList.forEach(gun => {
