@@ -79,7 +79,13 @@ public getDefaultGunList():Gun[]{
   
     guns.push(gun);
 
+    
+    gun = new Gun("CHIMERA",0, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
+    gun.setCamos('50 KILLS','20 HIPFIRE','10 DOUBLE','15 BEHIND')
+    guns.push(gun);
+
+
     gun = new Gun("M13B",0, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS','10 DOUBLE KILL','15 POINT BLANK','15 BEHIND')
@@ -92,24 +98,24 @@ public getDefaultGunList():Gun[]{
     guns.push(gun);
 
     //BATTLERIFLE
-    gun = new Gun("LACHMANN - 762",1, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
-  
-    gun.setCamos('50 KILLS','50 ADS','20 MOUNTED','10 BOUBLE')
-    guns.push(gun);
-
     gun = new Gun("SO-14",1, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS','50 ADS','10 DOUBLE','30 PRONE')
     guns.push(gun);
-    
-    gun = new Gun("TAQ-V",1, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
+
+    gun = new Gun("LACHMANN - 762",1, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
-    gun.setCamos('50 KILLS','15 POINTBLANK','15 BEHING','20 MOUNTED')
+    gun.setCamos('50 KILLS','50 ADS','20 MOUNTED','10 BOUBLE')
     guns.push(gun);
     
     gun = new Gun("FTAC RECON",1, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS','10 DOUBLE','50 SUPRESSOR','30 CROUCH')
+    guns.push(gun);
+
+    gun = new Gun("TAQ-V",1, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
+  
+    gun.setCamos('50 KILLS','15 POINTBLANK','15 BEHING','20 MOUNTED')
     guns.push(gun);
 
     //SMG
@@ -144,6 +150,11 @@ public getDefaultGunList():Gun[]{
     gun.setCamos('50 KILLS','10 BOUBLE','50 ADS', '15 POINTBLANK')
     guns.push(gun);
     
+    gun = new Gun("BAS-P",2, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
+  
+    gun.setCamos('50 KILLS','15 HIPFIRE','15 BEHIND', '50 SUPPRESSOR')
+    guns.push(gun);
+
     gun = new Gun("PDSW",2, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS','50 ADS','15 HIPFIRE', '10 POINTBLANK')
@@ -152,12 +163,6 @@ public getDefaultGunList():Gun[]{
     gun = new Gun("FENNEC 45",2, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS', '30 CROUCHED','15 BEHIND','10 DOUBLE')
-    guns.push(gun);
-
-    
-    gun = new Gun("BAS-P",2, '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
-  
-    gun.setCamos('50 KILLS','15 HIPFIRE','15 BEHIND', '50 SUPPRESSOR')
     guns.push(gun);
 
     //SHOTGUNS
@@ -231,14 +236,20 @@ public getDefaultGunList():Gun[]{
     gun.setCamos('50 KILLS', '50 ADS', '30 PRONE','20 MOUNTED')
     guns.push(gun);
     
+     
+    gun = new Gun("LM-S",5 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
+  
+    gun.setCamos('40 KILLS', '20 MOUNTED', '25 ONESHOT','30 CROUCH')
+    guns.push(gun);
+    
     gun = new Gun("LOCKWOOD MK2",5 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS', '15 BEHIND', '25 ONESHOT','10 POINTBLANK')
     guns.push(gun);
-    
-    gun = new Gun("LM-S",5 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
+ 
+    gun = new Gun("SA B 50",5 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
-    gun.setCamos('40 KILLS', '20 MOUNTED', '25 ONESHOT','30 CROUCH')
+    gun.setCamos('40 KILLS', '25 ONESHOT', '10 DOUBLE','10 MOUNTED')
     guns.push(gun);
     
     gun = new Gun("TAQ-M",5 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
@@ -246,14 +257,14 @@ public getDefaultGunList():Gun[]{
     gun.setCamos('50 KILLS', '20 MOUNTED', '5 HIPFIRE','10 DOUBLE')
     guns.push(gun);
     
-    gun = new Gun("CROSSBOW",5 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
-  
-    gun.setCamos('50 KILLS', '5 DOUBLE', '15 BEHIND','20 PRONE')
-    guns.push(gun);
-    
     gun = new Gun("TEMPUS TORRENT",5 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS', '10 DOUBLE', '20 MOUNTED','40 SUPPRESSOR')
+    guns.push(gun);
+
+    gun = new Gun("CROSSBOW",5 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
+  
+    gun.setCamos('50 KILLS', '5 DOUBLE', '15 BEHIND','20 PRONE')
     guns.push(gun);
     
     // SNIPER
@@ -263,6 +274,11 @@ public getDefaultGunList():Gun[]{
     gun.setCamos('50 KILLS', '10 2 KILL 10 SEC', '30 PRONE','10 HIPFIRE')
     guns.push(gun);
     
+    gun = new Gun("VICTUS XMR",6 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
+  
+    gun.setCamos('50 KILLS', '25 ONESHOT', '10 DOUBLE','30 CROUCH')
+    guns.push(gun);
+
     gun = new Gun("SIGNAL 50",6 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS', '10 2 KILL 10 SEC', '30 PRONE','25 ONESHOT')
@@ -276,11 +292,6 @@ public getDefaultGunList():Gun[]{
     gun = new Gun("SP-X 80",6 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
   
     gun.setCamos('50 KILLS', '20 MOUNTED', '25 ONESHOT','50 SUPPRESSOR')
-    guns.push(gun);
-    
-    gun = new Gun("VICTUS XMR",6 , '10 3 STREAKS', '25 LONGSHOT','25 HEADSHOT', 'UNLOCK 51 POLY');
-  
-    gun.setCamos('50 KILLS', '25 ONESHOT', '10 DOUBLE','30 CROUCH')
     guns.push(gun);
     
     // HANDGUN
@@ -342,7 +353,7 @@ public getDefaultGunList():Gun[]{
   
     gun.setCamos('40 KILLS')
     guns.push(gun);
-    gun = new Gun("RIOT SHIELD", 9 , '5 2 STREAKS', '10 2K 10SEC','20 BEHIND', 'UNLOCK 51 POLY');
+    gun = new Gun("DUAL KODACHIS", 9 , '5 2 STREAKS', '10 2K 10SEC','20 BEHIND', 'UNLOCK 51 POLY');
   
     gun.setCamos('40 KILLS')
     guns.push(gun);
