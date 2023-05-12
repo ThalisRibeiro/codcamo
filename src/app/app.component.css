@@ -3,4 +3,10 @@
     height: clamp(50px, 5vmax, 200px);  
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
+}
+.aboutLink{
+    text-align: center;
+    font-size: 1.5rem;
+    display: block;
 }
