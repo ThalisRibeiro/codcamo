@@ -6,7 +6,8 @@ import { AboutComponent } from './about/about.component';
 
 const routes:Routes = [
   {path:'', component: ListagemComponent},
-  {path:'about', component: AboutComponent}
+  {path:'about', component: AboutComponent},
+  {path:'**', redirectTo:''}
 ]
 
 @NgModule({
